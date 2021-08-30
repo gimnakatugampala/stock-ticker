@@ -9,6 +9,7 @@ import TrendingTicker from './components/TrendingTicker/TrendingTicker'
 import News from './components/News/News'
 import Cryptocurrencies from './components/Cryptocurrencies/Cryptocurrencies'
 import Stocks from './components/Stocks/Stocks'
+import SingleStock from './components/SingleStock/SingleStock'
 
 
 
@@ -38,23 +39,31 @@ const App = () => {
             <StockRecommend MoversAPI={MoversAPI} isLoading={isLoading} movers={movers} setmovers={setmovers}  />
 
             <div style={{margin:20}}>
-            <div className="row">
 
-                {/* Tab  */}
-                <div className="col-md-12">
-                <Tabs defaultActiveKey="trending" >
-                    <Tab eventKey="trending" title="Trending Stocks">
-                    {/* <TrendingTicker TrendingTickerAPI={TrendingTickerAPI} isLoading={isLoading} /> */}
-                    </Tab>
-                    <Tab eventKey="stocks" title="Stocks">
-                        {/* <Stocks TrendingTickerAPI={TrendingTickerAPI} stocks={stocks} setstocks={setstocks} isLoading={isLoading} /> */}
-                    </Tab>
-                    <Tab eventKey="cryptocurries" title="Cryptocurrencies">
-                        {/* <Cryptocurrencies TrendingTickerAPI={TrendingTickerAPI} cryptos={cryptos} setcryptos={setcryptos} isLoading={isLoading} /> */}
-                    </Tab>
-                </Tabs>
+            {/* If searching something get the Single stock component */}
+            {
+                search !== '' ? <SingleStock /> : (
+                    <div className="row">
+
+                    {/* Tab  */}
+                    <div className="col-md-12">
+                    <Tabs defaultActiveKey="trending" >
+                        <Tab eventKey="trending" title="Trending Stocks">
+                        {/* <TrendingTicker TrendingTickerAPI={TrendingTickerAPI} isLoading={isLoading} /> */}
+                        </Tab>
+                        <Tab eventKey="stocks" title="Stocks">
+                            {/* <Stocks TrendingTickerAPI={TrendingTickerAPI} stocks={stocks} setstocks={setstocks} isLoading={isLoading} /> */}
+                        </Tab>
+                        <Tab eventKey="cryptocurries" title="Cryptocurrencies">
+                            {/* <Cryptocurrencies TrendingTickerAPI={TrendingTickerAPI} cryptos={cryptos} setcryptos={setcryptos} isLoading={isLoading} /> */}
+                        </Tab>
+                    </Tabs>
+                    </div>
                 </div>
-            </div>
+                )
+            }
+
+           
 
             {/* News */}
             <News searchTerm={searchTerm} getQueryNews={getQueryNews} getlatestNews={getlatestNews} news={news} setNews={setNews} isLoading={isLoading} setisLoading={setisLoading} search={search} />

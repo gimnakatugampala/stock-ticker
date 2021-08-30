@@ -18,19 +18,23 @@ const StockRecommend = ({MoversAPI,isLoading,movers,setmovers}) => {
     return (
         <div style={{display:'flex'}} >
           <marquee style={{justifyContent:'center'}} loop="infinite">
-              {
-                  options?.map((option,index) => (
+              {isLoading ? (
+                   <div className="spinner-border text-primary m-auto" role="status"></div>
+              ) :(
+                options?.map((option,index) => (
 
-                <span key={index} style={{padding:'5px',marginLeft:'10px',marginRight:'10px'}}>
-                    <span style={{margin:'0 10px 0 10px'}}>
-                        <span style={{fontWeight:'bold'}}>{option.longName} ({option.symbol})  </span>
-                        <span style={{fontWeight:'bold'}}>$ {option.postMarketPrice.toFixed(2)}     </span>
-                        <span className={Math.sign(option.regularMarketChange.toFixed(2)) === -1 ? 'text-danger' : 'text-success'} style={{fontWeight:'bold'}}>$ {option.regularMarketChange.toFixed(2)}   {option.regularMarketChangePercent.toFixed(2)}%</span>
-
+                    <span key={index} style={{padding:'5px',marginLeft:'10px',marginRight:'10px'}}>
+                        <span style={{margin:'0 10px 0 10px'}}>
+                            <span style={{fontWeight:'bold'}}>{option.longName} ({option.symbol})  </span>
+                            <span style={{fontWeight:'bold'}}>$ {option.postMarketPrice.toFixed(2)}     </span>
+                            <span className={Math.sign(option.regularMarketChange.toFixed(2)) === -1 ? 'text-danger' : 'text-success'} style={{fontWeight:'bold'}}>$ {option.regularMarketChange.toFixed(2)}   {option.regularMarketChangePercent.toFixed(2)}%</span>
+    
+                        </span>
                     </span>
-                </span>
-
-                  ))
+    
+                      ))
+              )
+                
               }
            
             </marquee>
