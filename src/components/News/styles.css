@@ -1,14 +1,14 @@
 .cards{
-    max-width: 1300px;
-    margin: 0 auto;
+    /* max-width: 1300px;
+    margin: 0 auto; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
 .card{
-    float: left;
-    width: 25%;
     padding: 0 10px;
-    margin: 10px;
-    white-space: pre-wrap;
+    border: 1px solid #0d6efd;
 }
 
 .url{
@@ -16,6 +16,9 @@
     color: white;
     background-color: #0d6efd;
     padding: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 .url:hover{
@@ -30,8 +33,28 @@
     text-align: center;
 }
 
-@media (max-width: 600px) {
-    .card{
-        width: 100%;
+
+  @media (max-width: 1000px) {
+    .cards{
+        grid-template-columns: repeat(3, 1fr);
     }
-  }
+}
+
+@media (max-width: 800px) {
+    .cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .cards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .title{
+        font-size: 16px;
+        padding: 5px;
+    }
+    .url{
+        font-size: 16px;
+    }
+}

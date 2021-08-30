@@ -1,9 +1,15 @@
 import React from 'react'
 
-const StockRecommend = () => {
+const StockRecommend = ({MoversAPI}) => {
     return (
-        <div>
-            <h1>StockRecommend</h1>
+        <div style={{display:'flex'}}>
+          <marquee style={{justifyContent:'center'}}>
+            <span style={{margin:'0 10px 0 10px'}}>lorem</span>
+            <span style={{margin:'0 10px 0 10px'}}>lorem</span>
+            <span style={{margin:'0 10px 0 10px'}}>lorem</span>
+            <span style={{margin:'0 10px 0 10px'}}>lorem</span>
+        
+            </marquee>
         </div>
     )
 }

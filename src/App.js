@@ -32,11 +32,15 @@ const App = () => {
     return (
         <div>
             <Navbar setSearch={setSearch} search={search} searchTerm={searchTerm} />
+
+            {/* Recommended List of Stock */}
+            <StockRecommend MoversAPI={MoversAPI}  />
+
             <div style={{margin:20}}>
             <div className="row">
 
                 {/* Tab  */}
-                <div className="col-md-8">
+                <div className="col-md-12">
                 <Tabs defaultActiveKey="trending" >
                     <Tab eventKey="trending" title="Trending Stocks">
                     {/* <TrendingTicker TrendingTickerAPI={TrendingTickerAPI} isLoading={isLoading} /> */}
@@ -48,11 +52,6 @@ const App = () => {
                         {/* <Cryptocurrencies TrendingTickerAPI={TrendingTickerAPI} cryptos={cryptos} setcryptos={setcryptos} isLoading={isLoading} /> */}
                     </Tab>
                 </Tabs>
-                </div>
-
-                {/* Stock Recommendation */}
-                <div className="col-md-4">
-                    <StockRecommend  />
                 </div>
             </div>
 
