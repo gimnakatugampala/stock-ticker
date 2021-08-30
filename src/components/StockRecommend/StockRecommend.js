@@ -16,12 +16,12 @@ const StockRecommend = ({MoversAPI,isLoading,movers,setmovers}) => {
     console.log(options)
 
     return (
-        <div style={{display:'flex'}}>
-          <marquee style={{justifyContent:'center'}}>
+        <div style={{display:'flex'}} >
+          <marquee style={{justifyContent:'center'}} loop="infinite">
               {
                   options?.map((option,index) => (
 
-                <span key={index} style={{padding:'5px',marginLeft:'10px',marginRight:'10px',borderRight:'1px solid black',borderLeft:'1px solid black'}}>
+                <span key={index} style={{padding:'5px',marginLeft:'10px',marginRight:'10px'}}>
                     <span style={{margin:'0 10px 0 10px'}}>
                         <span style={{fontWeight:'bold'}}>{option.longName} ({option.symbol})  </span>
                         <span style={{fontWeight:'bold'}}>$ {option.postMarketPrice.toFixed(2)}     </span>
