@@ -15,13 +15,13 @@ import Profile from './Profile/Profile'
 import Statistics from './Statistics/Statistics'
 import Summary from './Summary/Summary'
 
-const TabsComponent = () => {
+const TabsComponent = ({summary}) => {
     return (
         <div>
 
-<Tabs defaultActiveKey="summary" style={{marginTop:'30px'}}>
+      <Tabs defaultActiveKey="summary" style={{marginTop:'30px'}}>
           <Tab eventKey="summary" title="Summary">
-                <Summary />
+                <Summary summary={summary}  />
           </Tab>
           <Tab eventKey="chart" title="Chart">
                 <Chart />

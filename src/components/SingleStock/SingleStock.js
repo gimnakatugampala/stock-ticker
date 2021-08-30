@@ -1,18 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useEffect ,useState} from 'react'
 import './styles.css'
 
 import TabsComponent from './TabsComponent/Tabs'
 
 
 
-const SingleStock = ({SummaryStockAPi,symbol,setsymbol}) => {
+const SingleStock = ({SummaryStockAPi,symbol}) => {
 
-    // const [summary, setsummary] = useState(initialState)
+    const [summary, setsummary] = useState(null)
 
-    // useEffect(() => {
-    //     SummaryStockAPi(symbol)
-    //     .then(data => console.log(data))
-    // })
+    useEffect(() => {
+        SummaryStockAPi(symbol)
+        .then(data => {
+            setsummary(data)
+           
+        })
+    },[symbol])
 
     return (
         <div>
@@ -25,7 +28,7 @@ const SingleStock = ({SummaryStockAPi,symbol,setsymbol}) => {
                 <p style={{marginTop:'-10px',fontSize:'13px',color:'#B8AFAD'}}>At close: August 27 4:00PM EDT</p>
             </div>
 
-            <TabsComponent />
+            <TabsComponent  summary={summary}  />
            
            
         </div>

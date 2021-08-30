@@ -40,20 +40,18 @@ const App = () => {
         setSearch(search)
     }
 
- 
-
     return (
         <div>
             <Navbar setSearch={setSearch} search={search} searchTerm={searchTerm} />
 
             {/* Recommended List of Stock */}
-            <StockRecommend MoversAPI={MoversAPI} isLoading={isLoading} movers={movers} setmovers={setmovers}  />
+            {/* <StockRecommend MoversAPI={MoversAPI} isLoading={isLoading} movers={movers} setmovers={setmovers}  /> */}
 
             <div style={{margin:20}}>
 
             {/* If searching something get the Single stock component */}
             {
-                search !== '' ? <SingleStock SummaryStockAPi={SummaryStockAPi} symbol={symbol} setsymbol={setsymbol}  /> : (
+                search !== '' ? <SingleStock SummaryStockAPi={SummaryStockAPi} symbol={symbol}  /> : (
                     <div className="row">
 
                     {/* Tab  */}
