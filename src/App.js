@@ -12,7 +12,7 @@ import Stocks from './components/Stocks/Stocks'
 
 
 
-import {getlatestNews ,getQueryNews,TrendingTickerAPI } from './api'
+import {getlatestNews ,getQueryNews,TrendingTickerAPI ,MoversAPI} from './api'
 
 const App = () => {
 

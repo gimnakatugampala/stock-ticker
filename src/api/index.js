@@ -22,3 +22,16 @@ export const TrendingTickerAPI = async() =>{
     })
     return res.json()
 }
+
+// Get Movers | Dashboard Margue
+export const MoversAPI = async() =>{
+    let res = await  fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-movers?region=US&lang=en-US&count=6&start=0", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+            "x-rapidapi-key": "c8dccee28fmsh12152de5d38488dp177f85jsnd5a544264eb2"
+        }
+    })
+    return res.json()
+}
+
