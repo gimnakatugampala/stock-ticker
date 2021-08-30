@@ -21,6 +21,7 @@ const App = () => {
     const [search, setSearch] = useState('')
     const [stocks, setstocks] = useState([])
     const [cryptos, setcryptos] = useState([])
+    const [movers, setmovers] = useState([])
 
     const searchTerm = (e) =>{
         e.preventDefault()
@@ -34,7 +35,7 @@ const App = () => {
             <Navbar setSearch={setSearch} search={search} searchTerm={searchTerm} />
 
             {/* Recommended List of Stock */}
-            <StockRecommend MoversAPI={MoversAPI}  />
+            <StockRecommend MoversAPI={MoversAPI} isLoading={isLoading} movers={movers} setmovers={setmovers}  />
 
             <div style={{margin:20}}>
             <div className="row">
