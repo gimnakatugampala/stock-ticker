@@ -5,17 +5,31 @@ import TabsComponent from './TabsComponent/Tabs'
 
 
 
-const SingleStock = ({SummaryStockAPi,symbol}) => {
+const SingleStock = ({HoldersStockAPI,SummaryStockAPi,symbol}) => {
 
     const [summary, setsummary] = useState(null)
+    const [holders, setholders] = useState(null)
 
     useEffect(() => {
+
+        // Get Summary API
         SummaryStockAPi(symbol)
         .then(data => {
             setsummary(data)
-           
+            console.log(data)
         })
+
+        // Get Holders Data
+        HoldersStockAPI(symbol)
+        .then(data => {
+            setholders(data)
+            console.log(data)
+        })
+
+
+
     },[symbol])
+
 
     return (
         <div>
@@ -28,7 +42,7 @@ const SingleStock = ({SummaryStockAPi,symbol}) => {
                 <p style={{marginTop:'-10px',fontSize:'13px',color:'#B8AFAD'}}>At close: August 27 4:00PM EDT</p>
             </div>
 
-            <TabsComponent  summary={summary}  />
+            <TabsComponent  summary={summary} holders={holders}  />
            
            
         </div>

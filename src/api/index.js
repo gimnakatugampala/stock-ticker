@@ -59,6 +59,19 @@ export const SummaryStockAPi = async(facebook) =>{
     return res.json()
 }
 
+// Get the Holders of the Stock
+export const HoldersStockAPI = async() =>{
+    let res = await fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-holders?symbol=AAPL&region=US`, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+            "x-rapidapi-key": "9bec526ac3msh63dd0dbf60fc193p178bb9jsn3d32f5cc75cf"
+        }
+    })
+    return res.json()
+}
+
+
 
 
 

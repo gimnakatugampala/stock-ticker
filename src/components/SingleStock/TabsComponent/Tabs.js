@@ -15,7 +15,7 @@ import Profile from './Profile/Profile'
 import Statistics from './Statistics/Statistics'
 import Summary from './Summary/Summary'
 
-const TabsComponent = ({summary}) => {
+const TabsComponent = ({summary,holders}) => {
     return (
         <div>
 

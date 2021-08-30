@@ -13,7 +13,7 @@ import SingleStock from './components/SingleStock/SingleStock'
 
 
 
-import {getlatestNews ,getQueryNews,TrendingTickerAPI ,MoversAPI ,autocompleteAPI,SummaryStockAPi} from './api'
+import {getlatestNews ,getQueryNews,TrendingTickerAPI ,MoversAPI ,autocompleteAPI,SummaryStockAPi,HoldersStockAPI} from './api'
 
 const App = () => {
 
@@ -51,7 +51,7 @@ const App = () => {
 
             {/* If searching something get the Single stock component */}
             {
-                search !== '' ? <SingleStock SummaryStockAPi={SummaryStockAPi} symbol={symbol}  /> : (
+                search !== '' ? <SingleStock SummaryStockAPi={SummaryStockAPi} HoldersStockAPI={HoldersStockAPI} symbol={symbol}  /> : (
                     <div className="row">
 
                     {/* Tab  */}
