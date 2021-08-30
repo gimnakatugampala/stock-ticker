@@ -13,7 +13,7 @@ const StockRecommend = ({MoversAPI,isLoading,movers,setmovers}) => {
     Object.keys(movers).forEach(function(key) {
         options.push(movers[key]);
     });
-    console.log(options)
+    // console.log(options)
 
     return (
         <div style={{display:'flex'}} >

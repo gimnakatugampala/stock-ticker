@@ -16,8 +16,8 @@ export const TrendingTickerAPI = async() =>{
     let res = await  fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-trending-tickers?region=US", {
         "method": "GET",
         "headers": {
-            "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            // "x-rapidapi-key": 'c8dccee28fmsh12152de5d38488dp177f85jsnd5a544264eb2'
+            'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
+            // 'x-rapidapi-key': '9bec526ac3msh63dd0dbf60fc193p178bb9jsn3d32f5cc75cf'
         }
     })
     return res.json()
@@ -28,10 +28,38 @@ export const MoversAPI = async() =>{
     let res = await  fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-watchlist-detail?userId=X3NJ2A7VDSABUI4URBWME2PZNM&pfId=the_berkshire_hathaway_portfolio", {
         "method": "GET",
         "headers": {
-            "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "c8dccee28fmsh12152de5d38488dp177f85jsnd5a544264eb2"
+            'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
+            'x-rapidapi-key': '9bec526ac3msh63dd0dbf60fc193p178bb9jsn3d32f5cc75cf'
         }
     })
     return res.json()
 }
+
+// Get the Symbol autocomplete
+export const autocompleteAPI = async(search) =>{
+    let res = await  fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?q=${search}&region=US`, {
+        "method": "GET",
+        "headers": {
+            'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
+            'x-rapidapi-key': '9bec526ac3msh63dd0dbf60fc193p178bb9jsn3d32f5cc75cf'
+        }
+    })
+    return res.json()
+}
+
+// Get The Summary Stock
+export const SummaryStockAPi = async(facebook) =>{
+    let res = await  fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-summary?symbol=${facebook}&region=US`, {
+        "method": "GET",
+        "headers": {
+            'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
+            'x-rapidapi-key': '9bec526ac3msh63dd0dbf60fc193p178bb9jsn3d32f5cc75cf'
+        }
+    })
+    return res.json()
+}
+
+
+
+
 

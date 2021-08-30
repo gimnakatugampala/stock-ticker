@@ -34,7 +34,7 @@ const News = ({getlatestNews,news,setNews,isLoading,setisLoading,getQueryNews ,s
     return (
         <div>
        
-           <h2 style={{marginLeft:30,fontSize:'25px',marginBottom:'10px',marginTop:'10px'}}>{search? search : 'Latest'} News</h2>
+           <h2 style={{marginLeft:30,fontSize:'25px',marginBottom:'10px',marginTop:'40px'}}>{search? search : 'Latest'} News</h2>
            <div className="cards">
                {isLoading ? (
                 <div className="spinner-border text-primary m-auto" role="status"></div>

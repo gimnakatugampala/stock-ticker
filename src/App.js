@@ -13,16 +13,27 @@ import SingleStock from './components/SingleStock/SingleStock'
 
 
 
-import {getlatestNews ,getQueryNews,TrendingTickerAPI ,MoversAPI} from './api'
+import {getlatestNews ,getQueryNews,TrendingTickerAPI ,MoversAPI ,autocompleteAPI,SummaryStockAPi} from './api'
 
 const App = () => {
 
+    
     const [news, setNews] = useState([])
     const [isLoading, setisLoading] = useState(true)
     const [search, setSearch] = useState('')
     const [stocks, setstocks] = useState([])
     const [cryptos, setcryptos] = useState([])
     const [movers, setmovers] = useState([])
+    const [symbol, setsymbol] = useState('')
+    
+    if(search){
+        autocompleteAPI(search)
+        .then(data => setsymbol(data.quotes[0].symbol))
+    }
+
+
+    console.log(symbol)
+
 
     const searchTerm = (e) =>{
         e.preventDefault()
@@ -42,7 +53,7 @@ const App = () => {
 
             {/* If searching something get the Single stock component */}
             {
-                search !== '' ? <SingleStock /> : (
+                search !== '' ? <SingleStock SummaryStockAPi={SummaryStockAPi} symbol={symbol} setsymbol={setsymbol}  /> : (
                     <div className="row">
 
                     {/* Tab  */}
