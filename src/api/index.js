@@ -20,7 +20,5 @@ export const TrendingTickerAPI = async() =>{
             // "x-rapidapi-key": 'c8dccee28fmsh12152de5d38488dp177f85jsnd5a544264eb2'
         }
     })
-
     return res.json()
-
 }
