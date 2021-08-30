@@ -4,6 +4,17 @@ import './styles.css'
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 
+import Analysis from './Analysis/Analysis'
+import Chart from './Chart/Chart'
+import Consersations from './Conversations/Conversations'
+import Financials from './Financials/Financials'
+import HistoricalData from './Historical-Data/HistoricalData'
+import Holders from './Holders/Holders'
+import Options from './Options/Options'
+import Profile from './Profile/Profile'
+import Statistics from './Statistics/Statistics'
+import Summary from './Summary/Summary'
+
 
 const SingleStock = ({SummaryStockAPi,symbol,setsymbol}) => {
 
@@ -28,34 +39,34 @@ const SingleStock = ({SummaryStockAPi,symbol,setsymbol}) => {
 
             <Tabs defaultActiveKey="summary" style={{marginTop:'30px'}}>
                         <Tab eventKey="summary" title="Summary">
-                            hello
+                            <Summary />
                         </Tab>
                         <Tab eventKey="chart" title="Chart">
-                            Hello2
+                            <Chart />
                         </Tab>
                         <Tab eventKey="conversations" title="Conversations">
-                          hello3
+                          <Consersations />
                         </Tab>
                         <Tab eventKey="statistics" title="Statistics">
-                          hello4
+                          <Statistics />
                         </Tab>
                         <Tab eventKey="historical-data" title="Historical Data">
-                          hello5
+                          <HistoricalData />
                         </Tab>
                         <Tab eventKey="profile" title="Profile">
-                          hello6
+                          <Profile />
                         </Tab>
                         <Tab eventKey="financials" title="Financials">
-                          hello7
+                          <Financials />
                         </Tab>
                         <Tab eventKey="analysis" title="Analysis">
-                          hello8
+                          <Analysis />
                         </Tab>
                         <Tab eventKey="options" title="Options">
-                          hello9
+                          <Options />
                         </Tab>
                         <Tab eventKey="holders" title="Holders">
-                          hello10
+                          <Holders />
                         </Tab>
              </Tabs>
            
