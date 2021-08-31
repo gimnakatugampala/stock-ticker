@@ -13,7 +13,7 @@ const StockRecommend = ({MoversAPI,isLoading,movers,setmovers}) => {
     Object.keys(movers).forEach(function(key) {
         options.push(movers[key]);
     });
-    // console.log(options)
+    console.log(options)
 
     return (
         <div style={{display:'flex'}} >
@@ -26,7 +26,7 @@ const StockRecommend = ({MoversAPI,isLoading,movers,setmovers}) => {
                     <span key={index} style={{padding:'5px',marginLeft:'10px',marginRight:'10px'}}>
                         <span style={{margin:'0 10px 0 10px'}}>
                             <span style={{fontWeight:'bold'}}>{option.longName} ({option.symbol})  </span>
-                            <span style={{fontWeight:'bold'}}>$ {option.postMarketPrice.toFixed(2)}     </span>
+                            <span style={{fontWeight:'bold'}}>$ {option.regularMarketPrice.toFixed(2)}     </span>
                             <span className={Math.sign(option.regularMarketChange.toFixed(2)) === -1 ? 'text-danger' : 'text-success'} style={{fontWeight:'bold'}}>$ {option.regularMarketChange.toFixed(2)}   {option.regularMarketChangePercent.toFixed(2)}%</span>
     
                         </span>

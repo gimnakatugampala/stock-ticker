@@ -42,7 +42,7 @@ const MajorHolders = ({holders}) => {
 
             <br />
 
-            {/* <h5>Top Institutional Holders</h5>
+            <h5>Top Institutional Holders</h5>
             <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -54,15 +54,17 @@ const MajorHolders = ({holders}) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {holders.institutionOwnership.ownershipList?.map((tholder,index) =>(
+                    {
+                    holders?holders.institutionOwnership.ownershipList?.map((tholder,index) =>(
                         <tr key={index}>
                         <td>{tholder.organization}</td>
                         <td>{tholder.position.longFmt}</td>
-                        <td>{tholder.reportDate}</td>
+                        <td>{tholder.reportDate.fmt}</td>
                         <td>{tholder.pctHeld.fmt}</td>
                         <td>{tholder.value.longFmt}</td>
                         </tr>
-                    ))}
+                    )) : 'Null'
+                    }
                    
                    
                 </tbody>
@@ -83,19 +85,21 @@ const MajorHolders = ({holders}) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {holders.fundOwnership.ownershipList?.map((tholder,index) =>(
+                    {
+                    holders?holders.fundOwnership.ownershipList?.map((tholder,index) =>(
                         <tr key={index}>
                         <td>{tholder.organization}</td>
                         <td>{tholder.position.longFmt}</td>
-                        <td>{tholder.reportDate}</td>
+                        <td>{tholder.reportDate.fmt}</td>
                         <td>{tholder.pctHeld.fmt}</td>
                         <td>{tholder.value.longFmt}</td>
                         </tr>
-                    ))}
+                    )) :'Null'
+                    }
                 
                 
                 </tbody>
-                </Table> */}
+                </Table>
 
         </div>
     )

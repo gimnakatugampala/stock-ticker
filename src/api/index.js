@@ -28,8 +28,8 @@ export const MoversAPI = async() =>{
     let res = await  fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-watchlist-detail?userId=X3NJ2A7VDSABUI4URBWME2PZNM&pfId=the_berkshire_hathaway_portfolio", {
         "method": "GET",
         "headers": {
-            'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
-            'x-rapidapi-key': '9bec526ac3msh63dd0dbf60fc193p178bb9jsn3d32f5cc75cf'
+            "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+            "x-rapidapi-key": "9bec526ac3msh63dd0dbf60fc193p178bb9jsn3d32f5cc75cf"
         }
     })
     return res.json()
