@@ -72,8 +72,8 @@ export const HoldersStockAPI = async(name) =>{
 }
 
 // Get the Analysis of the Stock
-export const AnalysisStockAPI = async() =>{
-    let res = await fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-analysis?symbol=AAPL&region=US", {
+export const AnalysisStockAPI = async(analysis) =>{
+    let res = await fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-analysis?symbol=${analysis}&region=US`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
@@ -82,6 +82,32 @@ export const AnalysisStockAPI = async() =>{
     })
     return res.json()
 }
+
+
+// Get the Financies of the Stock
+export const FinancialStockAPI = async(finance) =>{
+    let res = await fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-financials?symbol=${finance}&region=US`, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+            "x-rapidapi-key": "3eb96b68f3msheae2452c64a87c9p148086jsn05d3e86df6e3"
+        }
+    })
+    return res.json()
+}
+
+// Get the Profile of the Stock
+export const ProfileStockAPI = async() =>{
+    let res = await fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-profile?symbol=AAPL&region=US", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+            "x-rapidapi-key": "3eb96b68f3msheae2452c64a87c9p148086jsn05d3e86df6e3"
+        }
+    })
+    return res.json()
+}
+
 
 
 

@@ -14,7 +14,7 @@ import Profile from './Profile/Profile'
 import Statistics from './Statistics/Statistics'
 import Summary from './Summary/Summary'
 
-const TabsComponent = ({summary,holders,analysis}) => {
+const TabsComponent = ({summary,holders,analysis,finances}) => {
     return (
         <div>
 
@@ -38,7 +38,7 @@ const TabsComponent = ({summary,holders,analysis}) => {
                 <Profile />
           </Tab>
           <Tab eventKey="financials" title="Financials">
-                <Financials />
+                <Financials finances={finances} />
           </Tab>
           <Tab eventKey="analysis" title="Analysis">
                 <Analysis analysis={analysis} />
