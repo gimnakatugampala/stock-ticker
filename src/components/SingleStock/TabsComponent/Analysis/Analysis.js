@@ -14,6 +14,11 @@ const Analysis = ({analysis}) => {
     let earning = []
     let earning2 = []
     let revenues = []
+    let eps = []
+    let growth = []
+    let revisions = []
+    
+
 
     if(analysis){
 
@@ -48,6 +53,8 @@ const Analysis = ({analysis}) => {
         earning.push(t)
      })
 
+    //  console.log(analysis)
+
  
     }
     
@@ -60,9 +67,24 @@ const Analysis = ({analysis}) => {
            earning.forEach(revenue =>{
             revenues.push(revenue.revenueEstimate)
         })
-    
-    
-        console.log(revenues)
+
+        // EPS Trend
+        earning.forEach(epst =>{
+            eps.push(epst.epsTrend)
+        })
+
+        // Growth Estimate
+        earning.forEach(grow =>{
+            growth.push(grow.growth)
+        })
+
+        // EPS Revisions
+        earning.forEach(rev =>{
+            revisions.push(rev.epsRevisions)
+        })
+
+
+        // console.log(revisions)
     
   
 
@@ -220,6 +242,121 @@ const Analysis = ({analysis}) => {
                 </tr>
             </tbody>
             </Table>       
+            
+              {/* EPS Trend */}
+           <Table striped bordered hover style={{margin:'15px'}}>
+            <thead>
+                <tr>
+                <th><h6>EPS Trend</h6></th>
+                {earning?earning?.map((d,index) => (
+                    <th key={index}>{d.endDate}</th>
+                )) : 'N/A'}
+                
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>Current Estimate</td>
+                {eps?eps?.map((est,index) => (
+                    <td key={index}>{est.current.fmt}</td>
+                )) : 'N/A'}
+               
+                </tr>
+
+                <tr>
+                <td>7 Days Ago</td>
+                {eps?eps?.map((a,index) => (
+                    <td key={index}>{a['7daysAgo'].fmt}</td>
+                )) : 'N/A'}
+                </tr>
+
+                <tr>
+                <td>30 Days Ago</td>
+                {eps?eps?.map((d,index) => (
+                    <td key={index}>{d['30daysAgo'].fmt}</td>
+                )) : 'N/A'}
+                </tr>
+
+                <tr>
+                <td>60 Days Ago</td>
+                {eps?eps?.map((s,index) => (
+                    <td key={index}>{s['60daysAgo'].fmt}</td>
+                )) : 'N/A'}
+                </tr>
+
+                <tr>
+                <td>90 Days Ago</td>
+                {eps?eps?.map((s,index) => (
+                    <td key={index}>{s['90daysAgo'].fmt}</td>
+                )) : 'N/A'}
+                </tr>
+
+            </tbody>
+            </Table>       
+            
+               {/* Growth */}
+           <Table striped bordered hover style={{margin:'15px'}}>
+            <thead>
+                <tr>
+                <th><h6>Growth Estimates</h6></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                <td>Growth</td>
+                {growth?growth?.map((a,index) => (
+                    <td key={index}>{a.fmt}</td>
+                )) : 'N/A'}
+                </tr>
+
+              
+
+            </tbody>
+            </Table>       
+            
+            
+              {/* EPS Revisions */}
+           <Table striped bordered hover style={{margin:'15px'}}>
+            <thead>
+                <tr>
+                <th><h6>EPS Revisions</h6></th>
+                
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>Up Last 7 Days</td>
+                {revisions?revisions?.map((est,index) => (
+                    <td key={index}>{est.upLast7days?est.upLast7days.fmt :'N/A'}</td>
+                )) : 'N/A'}
+               
+                </tr>
+
+                <tr>
+                <td>Up Last 30 Days</td>
+                {revisions?revisions?.map((a,index) => (
+                    <td key={index}>{a.upLast30days? a.upLast30days.fmt : 'N/A'}</td>
+                )) : 'N/A'}
+                </tr>
+
+                <tr>
+                <td>Down Last 7 Days</td>
+                {revisions?revisions?.map((d,index) => (
+                    <td key={index}>{d.downLast7days? d.downLast7days.fmt :'N/A'}</td>
+                )) : 'N/A'}
+                </tr>
+
+                <tr>
+                <td>Down Last 30 Days</td>
+                {eps?eps?.map((s,index) => (
+                   <td key={index}>{s.downLast30days? s.downLast30days.fmt :'N/A'}</td>
+                )) : 'N/A'}
+                </tr>
+
+
+            </tbody>
+            </Table>  
         </div>
 
     )
