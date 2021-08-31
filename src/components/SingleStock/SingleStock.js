@@ -26,7 +26,7 @@ const SingleStock = ({HoldersStockAPI,SummaryStockAPi,symbol}) => {
             console.log(data)
         })
 
-
+       
 
     },[symbol])
 
@@ -41,8 +41,11 @@ const SingleStock = ({HoldersStockAPI,SummaryStockAPi,symbol}) => {
                 </span>
                 <p style={{marginTop:'-10px',fontSize:'13px',color:'#B8AFAD'}}>At close: August 27 4:00PM EDT</p>
             </div>
-
-            <TabsComponent  summary={summary} holders={holders}  />
+            
+            
+               <TabsComponent  summary={summary} holders={holders} />
+            
+           
            
            
         </div>

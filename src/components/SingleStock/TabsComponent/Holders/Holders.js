@@ -8,12 +8,12 @@ import Tab from 'react-bootstrap/Tab'
 import MajorHolders from './MajorHolders/MajorHolders'
 import InsiderTransactions from './InsiderTransactions/InsiderTransactions'
 
-const Holders = () => {
+const Holders = ({holders}) => {
     return (
-        <div>
+        <div style={{marginTop:'35px'}}>
               <Tabs defaultActiveKey="major-holders" >
                         <Tab eventKey="major-holders" title="Major Holders">
-                            <MajorHolders />
+                            <MajorHolders holders={holders} />
                         </Tab>
                         <Tab eventKey="insider-transactions" title="Insider Transactions">
                             <InsiderTransactions />

@@ -48,7 +48,7 @@ const TabsComponent = ({summary,holders}) => {
                 <Options />
           </Tab>
           <Tab eventKey="holders" title="Holders">
-                <Holders />
+                <Holders holders={holders} />
           </Tab>
              </Tabs>
             
