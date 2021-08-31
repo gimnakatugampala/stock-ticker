@@ -29,7 +29,7 @@ export const MoversAPI = async() =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "9bec526ac3msh63dd0dbf60fc193p178bb9jsn3d32f5cc75cf"
+            "x-rapidapi-key": "3eb96b68f3msheae2452c64a87c9p148086jsn05d3e86df6e3"
         }
     })
     return res.json()
@@ -41,7 +41,7 @@ export const autocompleteAPI = async(search) =>{
         "method": "GET",
         "headers": {
             'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
-            'x-rapidapi-key': '9bec526ac3msh63dd0dbf60fc193p178bb9jsn3d32f5cc75cf'
+            'x-rapidapi-key': '3eb96b68f3msheae2452c64a87c9p148086jsn05d3e86df6e3'
         }
     })
     return res.json()
@@ -53,7 +53,7 @@ export const SummaryStockAPi = async(facebook) =>{
         "method": "GET",
         "headers": {
             'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
-            'x-rapidapi-key': '9bec526ac3msh63dd0dbf60fc193p178bb9jsn3d32f5cc75cf'
+            'x-rapidapi-key': '3eb96b68f3msheae2452c64a87c9p148086jsn05d3e86df6e3'
         }
     })
     return res.json()
@@ -65,7 +65,19 @@ export const HoldersStockAPI = async(name) =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "9bec526ac3msh63dd0dbf60fc193p178bb9jsn3d32f5cc75cf"
+            "x-rapidapi-key": "3eb96b68f3msheae2452c64a87c9p148086jsn05d3e86df6e3"
+        }
+    })
+    return res.json()
+}
+
+// Get the Analysis of the Stock
+export const AnalysisStockAPI = async() =>{
+    let res = await fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-analysis?symbol=AAPL&region=US", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+            "x-rapidapi-key": "3eb96b68f3msheae2452c64a87c9p148086jsn05d3e86df6e3"
         }
     })
     return res.json()

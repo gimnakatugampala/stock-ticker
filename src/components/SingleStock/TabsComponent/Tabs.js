@@ -10,12 +10,11 @@ import Consersations from './Conversations/Conversations'
 import Financials from './Financials/Financials'
 import HistoricalData from './Historical-Data/HistoricalData'
 import Holders from './Holders/Holders'
-import Options from './Options/Options'
 import Profile from './Profile/Profile'
 import Statistics from './Statistics/Statistics'
 import Summary from './Summary/Summary'
 
-const TabsComponent = ({summary,holders}) => {
+const TabsComponent = ({summary,holders,analysis}) => {
     return (
         <div>
 
@@ -42,10 +41,7 @@ const TabsComponent = ({summary,holders}) => {
                 <Financials />
           </Tab>
           <Tab eventKey="analysis" title="Analysis">
-                <Analysis />
-          </Tab>
-          <Tab eventKey="options" title="Options">
-                <Options />
+                <Analysis analysis={analysis} />
           </Tab>
           <Tab eventKey="holders" title="Holders">
                 <Holders holders={holders} />

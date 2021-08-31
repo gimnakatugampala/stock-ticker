@@ -13,7 +13,7 @@ import SingleStock from './components/SingleStock/SingleStock'
 
 
 
-import {getlatestNews ,getQueryNews,TrendingTickerAPI ,MoversAPI ,autocompleteAPI,SummaryStockAPi,HoldersStockAPI} from './api'
+import {getlatestNews ,getQueryNews,TrendingTickerAPI ,MoversAPI ,autocompleteAPI,SummaryStockAPi,HoldersStockAPI,AnalysisStockAPI} from './api'
 
 const App = () => {
 
@@ -45,13 +45,13 @@ const App = () => {
             <Navbar setSearch={setSearch} search={search} searchTerm={searchTerm} />
 
             {/* Recommended List of Stock */}
-            <StockRecommend MoversAPI={MoversAPI} isLoading={isLoading} movers={movers} setmovers={setmovers}  />
+            {/* <StockRecommend MoversAPI={MoversAPI} isLoading={isLoading} movers={movers} setmovers={setmovers}  /> */}
 
             <div style={{margin:20}}>
 
             {/* If searching something get the Single stock component */}
             {
-                search !== '' ? <SingleStock SummaryStockAPi={SummaryStockAPi} HoldersStockAPI={HoldersStockAPI} symbol={symbol}  /> : (
+                search !== '' ? <SingleStock AnalysisStockAPI={AnalysisStockAPI} SummaryStockAPi={SummaryStockAPi} HoldersStockAPI={HoldersStockAPI} symbol={symbol}  /> : (
                     <div className="row">
 
                     {/* Tab  */}
