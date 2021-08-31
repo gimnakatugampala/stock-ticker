@@ -2,30 +2,34 @@ import React from 'react'
 
 import Table from 'react-bootstrap/Table'
 
-const InsiderTransactions = () => {
+const InsiderTransactions = ({holders}) => {
     return (
         <div>
-            <h1>Insider Transaction</h1>
+            <h5 style={{margin:'15px'}}>Insider Transaction</h5>
             <Table striped bordered hover>
-            
+            <thead>
+                    <tr>
+                    <th>Insider</th>
+                    <th>Transaction</th>
+                    <th>Type</th>
+                    <th>Value</th>
+                    <th>Date</th>
+                    <th>Shares</th>
+                    </tr>
+                </thead>
             <tbody>
-                <tr>
-                <td>1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                </tr>
-                <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                </tr>
-                <tr>
-                <td>3</td>
-                <td colSpan="2">Larry the Bird</td>
-                <td>@twitter</td>
-                </tr>
+                {holders?holders.insiderTransactions.transactions?.map((holder,index) => (
+                        <tr key={index}>
+                        <td>{holder.filerName} <span style={{color:'#0d6efd'}}> ({holder.filerRelation})</span></td>
+                        <td>{holder.transactionText === null ? '' : holder.transactionText}</td>
+                        <td>{holder.ownership === 'D' ? 'Direct' : 'Indirect'}</td>
+                        <td>{holder.value === undefined ? '' : holder.value.longFmt}</td>
+                        <td>{holder.startDate.fmt}</td>
+                        <td>{holder.shares.longFmt}</td>
+                        </tr>
+                    )) : 'Null'}
+              
+                
             </tbody>
             </Table>
         </div>

@@ -16,7 +16,7 @@ const Holders = ({holders}) => {
                             <MajorHolders holders={holders} />
                         </Tab>
                         <Tab eventKey="insider-transactions" title="Insider Transactions">
-                            <InsiderTransactions />
+                            <InsiderTransactions holders={holders} />
                         </Tab>
                       
                 </Tabs>

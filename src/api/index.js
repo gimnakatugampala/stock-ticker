@@ -60,8 +60,8 @@ export const SummaryStockAPi = async(facebook) =>{
 }
 
 // Get the Holders of the Stock
-export const HoldersStockAPI = async() =>{
-    let res = await fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-holders?symbol=AMRN&region=US", {
+export const HoldersStockAPI = async(name) =>{
+    let res = await fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-holders?symbol=${name}&region=US`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
