@@ -25,6 +25,8 @@ const App = () => {
     const [cryptos, setcryptos] = useState([])
     const [movers, setmovers] = useState([])
     const [symbol, setsymbol] = useState('')
+
+
     
     if(search){
         autocompleteAPI(search)
