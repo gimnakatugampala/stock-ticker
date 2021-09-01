@@ -135,8 +135,8 @@ export const StatisticStockAPI = async(statistic) =>{
 }
 
 // Get the Conversations of the Stock
-export const ConversationnStockAPI = async() =>{
-    let res = await fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/conversations/list?symbol=AAPL&messageBoardId=finmb_24937&region=US&userActivity=true&sortBy=createdAt&off=0", {
+export const ConversationnStockAPI = async(convers) =>{
+    let res = await fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/conversations/list?symbol=${convers}&messageBoardId=finmb_24937&region=US&userActivity=true&sortBy=createdAt&off=0`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
