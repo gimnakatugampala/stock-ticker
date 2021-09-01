@@ -5,7 +5,7 @@ import TabsComponent from './TabsComponent/Tabs'
 
 
 
-const SingleStock = ({ConversationnStockAPI,StatisticStockAPI,HistoricStockAPI,ProfileStockAPI,FinancialStockAPI,AnalysisStockAPI,HoldersStockAPI,SummaryStockAPi,symbol}) => {
+const SingleStock = ({ChartStockAPI,ConversationnStockAPI,StatisticStockAPI,HistoricStockAPI,ProfileStockAPI,FinancialStockAPI,AnalysisStockAPI,HoldersStockAPI,SummaryStockAPi,symbol}) => {
 
     const [summary, setsummary] = useState(null)
     const [holders, setholders] = useState(null)
@@ -15,6 +15,7 @@ const SingleStock = ({ConversationnStockAPI,StatisticStockAPI,HistoricStockAPI,P
     const [historics, sethistorics] = useState(null)
     const [statistics, setstatistics] = useState(null)
     const [conversations, setconversations] = useState(null)
+    const [charts, setcharts] = useState(null)
 
     useEffect(() => {
 
@@ -32,16 +33,7 @@ const SingleStock = ({ConversationnStockAPI,StatisticStockAPI,HistoricStockAPI,P
            //    console.log(data)
           })
 
-              // Get Profile Data
-        ProfileStockAPI(symbol)
-        .then(data => {
-            setprofile(data)
-            // console.log(data)
-        })
-
-         
-
-
+        
         
 
       
@@ -62,6 +54,13 @@ const SingleStock = ({ConversationnStockAPI,StatisticStockAPI,HistoricStockAPI,P
               setfinances(data)
               console.log(data)
           })
+
+        //   Chart Data
+          ChartStockAPI(symbol)
+          .then(data => {
+            setcharts(data)
+            console.log(data)
+        })
 
         },4000)
 
@@ -93,6 +92,20 @@ const SingleStock = ({ConversationnStockAPI,StatisticStockAPI,HistoricStockAPI,P
 
 
     },7000)
+
+         
+  
+         
+          setTimeout(() =>{
+
+             // Get Profile Data
+          ProfileStockAPI(symbol)
+          .then(data => {
+              setprofile(data)
+              // console.log(data)
+          })
+
+          },10000)
 
        
        

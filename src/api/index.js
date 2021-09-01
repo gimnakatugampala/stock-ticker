@@ -146,6 +146,17 @@ export const ConversationnStockAPI = async(convers) =>{
     return res.json()
 }
 
+// Get the Chart of the Stock
+export const ChartStockAPI = async() =>{
+    let res = await fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-chart?interval=5m&symbol=AAPL&range=1d&region=US", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+            "x-rapidapi-key": "5d23890605msha6f4c34537ebce3p11928fjsn192f2eb12ffe"
+        }
+    })
+    return res.json()
+}
 
 
 

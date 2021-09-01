@@ -20,31 +20,39 @@ const TabsComponent = ({summary,holders,analysis,finances,profile,historics,stat
 
       <Tabs defaultActiveKey="summary" style={{marginTop:'30px'}}>
           <Tab eventKey="summary" title="Summary">
-                <Summary summary={summary}  />
+                {summary? <Summary summary={summary}  /> : 'Loading..'}
+                
           </Tab>
           <Tab eventKey="chart" title="Chart">
+
                 <Chart />
           </Tab>
           <Tab eventKey="conversations" title="Conversations">
-                <Consersations conversations={conversations} />
+                {conversations? <Consersations conversations={conversations} /> : 'Loading..' }
+               
           </Tab>
           <Tab eventKey="statistics" title="Statistics">
-                <Statistics statistics={statistics} />
+                {statistics? <Statistics statistics={statistics} /> : 'Loading..'}
+                
           </Tab>
           <Tab eventKey="historical-data" title="Historical Data">
-                <HistoricalData historics={historics} />
+                {historics ? <HistoricalData historics={historics} /> : 'Loading..'}
+                
           </Tab>
           <Tab eventKey="profile" title="Profile">
-                <Profile profile={profile} />
+                {profile? <Profile profile={profile} /> : 'Loading..'}
+                
           </Tab>
           <Tab eventKey="financials" title="Financials">
                 <Financials finances={finances} />
           </Tab>
           <Tab eventKey="analysis" title="Analysis">
-                <Analysis analysis={analysis} />
+                {analysis? <Analysis analysis={analysis} /> : 'Loading..' }
+                
           </Tab>
           <Tab eventKey="holders" title="Holders">
-                <Holders holders={holders} />
+                {holders? <Holders holders={holders} /> : 'Loading..' }
+                
           </Tab>
              </Tabs>
             
