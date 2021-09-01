@@ -14,7 +14,7 @@ const MajorHolders = ({holders}) => {
         <div style={{marginTop:'10px'}}>
             <h5>Major Holders</h5>
             <h6>Breakdown</h6>
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
             <tbody>
 
                 <tr>
@@ -43,7 +43,7 @@ const MajorHolders = ({holders}) => {
             <br />
 
             <h5>Top Institutional Holders</h5>
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
                 <thead>
                     <tr>
                     <th>Holders</th>
@@ -74,7 +74,7 @@ const MajorHolders = ({holders}) => {
                 <br />
 
             <h5>Top Mutual Fund Holders</h5>
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
                 <thead>
                     <tr>
                     <th>Holders</th>

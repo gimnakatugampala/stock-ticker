@@ -8,7 +8,7 @@ const Statistics = ({statistics}) => {
     return (
         <div>
             {/* Statistics */}
-            <Table striped bordered hover style={{margin:'15px'}}>
+            <Table striped bordered hover style={{margin:'15px'}} responsive>
             <thead>
                 <tr>
                 <th><h6>Statistics</h6></th>

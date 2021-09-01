@@ -6,7 +6,7 @@ const Income = ({finances}) => {
     return (
         <div style={{margin:'15px'}}>
         <h3>Income Statement</h3> 
-        <Table striped bordered hover>
+        <Table striped bordered hover responsive>
           <thead>
           <tr>
               <th>Breakdown</th>

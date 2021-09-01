@@ -6,7 +6,7 @@ const InsiderTransactions = ({holders}) => {
     return (
         <div>
             <h5 style={{margin:'15px'}}>Insider Transaction</h5>
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
             <thead>
                     <tr>
                     <th>Insider</th>

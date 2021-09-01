@@ -6,7 +6,7 @@ const CashFlow = ({finances}) => {
     return (
         <div style={{margin:'15px'}}>
         <h3>Cash Flow</h3> 
-        <Table striped bordered hover>
+        <Table striped bordered hover responsive>
           <thead>
           <tr>
               <th>Cash Flow</th>

@@ -26,7 +26,7 @@ const Profile = ({profile}) => {
 
 
             <h5>Key Executives</h5>
-           <Table striped bordered hover style={{margin:'15px'}}>
+           <Table striped bordered hover style={{margin:'15px'}} responsive>
             <thead>
                 <tr>
                 <th><h6>Name</h6></th>

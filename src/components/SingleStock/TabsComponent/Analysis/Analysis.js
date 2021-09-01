@@ -92,7 +92,7 @@ const Analysis = ({analysis}) => {
     return (
         <div>
             {/* Earnings Estimate */}
-           <Table striped bordered hover style={{margin:'15px'}}>
+           <Table striped bordered hover style={{margin:'15px'}} responsive>
             <thead>
                 <tr>
                 <th><h6>Earnings History</h6></th>
@@ -136,7 +136,7 @@ const Analysis = ({analysis}) => {
 
 
               {/* Earnings Trending */}
-           <Table striped bordered hover style={{margin:'15px'}}>
+           <Table striped bordered hover style={{margin:'15px'}} responsive>
             <thead>
                 <tr>
                 <th><h6>Earnings Estimate</h6></th>
@@ -186,7 +186,7 @@ const Analysis = ({analysis}) => {
             </Table>
                     
                 {/* Earnings Revenue */}
-           <Table striped bordered hover style={{margin:'15px'}}>
+           <Table striped bordered hover style={{margin:'15px'}} responsive>
             <thead>
                 <tr>
                 <th><h6>Revenue Estimate</h6></th>
@@ -244,7 +244,7 @@ const Analysis = ({analysis}) => {
             </Table>       
             
               {/* EPS Trend */}
-           <Table striped bordered hover style={{margin:'15px'}}>
+           <Table striped bordered hover style={{margin:'15px'}} responsive>
             <thead>
                 <tr>
                 <th><h6>EPS Trend</h6></th>
@@ -295,7 +295,7 @@ const Analysis = ({analysis}) => {
             </Table>       
             
                {/* Growth */}
-           <Table striped bordered hover style={{margin:'15px'}}>
+           <Table striped bordered hover style={{margin:'15px'}} responsive>
             <thead>
                 <tr>
                 <th><h6>Growth Estimates</h6></th>
@@ -317,7 +317,7 @@ const Analysis = ({analysis}) => {
             
             
               {/* EPS Revisions */}
-           <Table striped bordered hover style={{margin:'15px'}}>
+           <Table striped bordered hover style={{margin:'15px'}} responsive>
             <thead>
                 <tr>
                 <th><h6>EPS Revisions</h6></th>

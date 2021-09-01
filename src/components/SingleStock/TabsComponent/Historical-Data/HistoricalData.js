@@ -9,7 +9,7 @@ const HistoricalData = ({historics}) => {
         <div style={{margin:'15px'}}>
             <h5>Historical Data</h5>
 
-            <Table striped bordered hover style={{margin:'15px'}}>
+            <Table striped bordered hover style={{margin:'15px'}} responsive>
             <thead>
                 <tr>
                 <th><h6>Date</h6></th>

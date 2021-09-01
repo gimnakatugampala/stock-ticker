@@ -7,7 +7,7 @@ const BalanceSheet = ({finances}) => {
     return (
         <div style={{margin:'15px'}}>
            <h3>Balance Sheet</h3> 
-           <Table striped bordered hover>
+           <Table striped bordered hover responsive>
              <thead>
              <tr>
                  <th>Breakdown</th>
