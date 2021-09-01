@@ -14,7 +14,7 @@ import Profile from './Profile/Profile'
 import Statistics from './Statistics/Statistics'
 import Summary from './Summary/Summary'
 
-const TabsComponent = ({summary,holders,analysis,finances,profile,historics}) => {
+const TabsComponent = ({summary,holders,analysis,finances,profile,historics,statistics}) => {
     return (
         <div>
 
@@ -29,7 +29,7 @@ const TabsComponent = ({summary,holders,analysis,finances,profile,historics}) =>
                 <Consersations />
           </Tab>
           <Tab eventKey="statistics" title="Statistics">
-                <Statistics />
+                <Statistics statistics={statistics} />
           </Tab>
           <Tab eventKey="historical-data" title="Historical Data">
                 <HistoricalData historics={historics} />

@@ -110,8 +110,33 @@ export const ProfileStockAPI = async(profile) =>{
 
 
 // Get the Historic Data of the Stock
-export const HistoricStockAPI = async() =>{
-    let res = await fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v3/get-historical-data?symbol=AAPL&region=US", {
+export const HistoricStockAPI = async(history) =>{
+    let res = await fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v3/get-historical-data?symbol=${history}&region=US`, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+            "x-rapidapi-key": "e4c6aeeefcmshafcb79a18c182d6p117e9cjsn85fc01a7a14b"
+        }
+    })
+    return res.json()
+}
+
+
+// Get the Statistics of the Stock
+export const StatisticStockAPI = async(statistic) =>{
+    let res = await fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v3/get-statistics?symbol=${statistic}`, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+            "x-rapidapi-key": "e4c6aeeefcmshafcb79a18c182d6p117e9cjsn85fc01a7a14b"
+        }
+    })
+    return res.json()
+}
+
+// Get the Conversations of the Stock
+export const ConversationnStockAPI = async() =>{
+    let res = await fetch("https://apidojo-yahoo-finance-v1.p.rapidapi.com/conversations/list?symbol=AAPL&messageBoardId=finmb_24937&region=US&userActivity=true&sortBy=createdAt&off=0", {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
