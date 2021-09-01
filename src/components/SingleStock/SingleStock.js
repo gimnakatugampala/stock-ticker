@@ -5,13 +5,14 @@ import TabsComponent from './TabsComponent/Tabs'
 
 
 
-const SingleStock = ({ProfileStockAPI,FinancialStockAPI,AnalysisStockAPI,HoldersStockAPI,SummaryStockAPi,symbol}) => {
+const SingleStock = ({HistoricStockAPI,ProfileStockAPI,FinancialStockAPI,AnalysisStockAPI,HoldersStockAPI,SummaryStockAPi,symbol}) => {
 
     const [summary, setsummary] = useState(null)
     const [holders, setholders] = useState(null)
     const [analysis, setanalysis] = useState(null)
     const [finances, setfinances] = useState(null)
     const [profile, setprofile] = useState(null)
+    const [historics, sethistorics] = useState(null)
 
     useEffect(() => {
 
@@ -49,10 +50,17 @@ const SingleStock = ({ProfileStockAPI,FinancialStockAPI,AnalysisStockAPI,Holders
         ProfileStockAPI(symbol)
         .then(data => {
             setprofile(data)
-            console.log(data)
+            // console.log(data)
         })
 
         },2000)
+
+        HistoricStockAPI(symbol)
+        .then(data => {
+            sethistorics(data)
+            console.log(data)
+        })
+
 
 
     },[symbol])
@@ -70,7 +78,7 @@ const SingleStock = ({ProfileStockAPI,FinancialStockAPI,AnalysisStockAPI,Holders
             </div>
             
             
-               <TabsComponent profile={profile} finances={finances} summary={summary} holders={holders} analysis={analysis} />
+               <TabsComponent historics={historics} profile={profile} finances={finances} summary={summary} holders={holders} analysis={analysis} />
             
            
            
