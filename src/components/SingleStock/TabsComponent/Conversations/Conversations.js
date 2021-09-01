@@ -20,7 +20,7 @@ const Conversations = ({conversations}) => {
                        {conversation.details.userText}
                        </Card.Text>
                        
-                      <span style={{margin:'15px',padding:'10px'}}><i class="fas fa-thumbs-up"></i>{conversation.reactionStats.upVoteCount}</span>  <span> <i class="fas fa-thumbs-down"></i>{conversation.reactionStats.downVoteCount}</span> 
+                      <span style={{margin:'15px',padding:'10px'}}><i className="fas fa-thumbs-up"></i>{conversation.reactionStats.upVoteCount}</span>  <span> <i className="fas fa-thumbs-down"></i>{conversation.reactionStats.downVoteCount}</span> 
                 
                    </Card.Body>
                    </Card>
