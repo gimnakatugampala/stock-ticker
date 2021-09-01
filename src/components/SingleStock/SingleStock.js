@@ -43,14 +43,17 @@ const SingleStock = ({ProfileStockAPI,FinancialStockAPI,AnalysisStockAPI,Holders
             // console.log(data)
         })
 
-        // Get Profile Data
+        setTimeout(() => {
+
+             // Get Profile Data
         ProfileStockAPI(symbol)
         .then(data => {
             setprofile(data)
             console.log(data)
         })
 
-       
+        },2000)
+
 
     },[symbol])
 
@@ -67,7 +70,7 @@ const SingleStock = ({ProfileStockAPI,FinancialStockAPI,AnalysisStockAPI,Holders
             </div>
             
             
-               <TabsComponent finances={finances} summary={summary} holders={holders} analysis={analysis} />
+               <TabsComponent profile={profile} finances={finances} summary={summary} holders={holders} analysis={analysis} />
             
            
            

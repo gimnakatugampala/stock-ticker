@@ -29,7 +29,7 @@ export const MoversAPI = async() =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "3eb96b68f3msheae2452c64a87c9p148086jsn05d3e86df6e3"
+            "x-rapidapi-key": "e4c6aeeefcmshafcb79a18c182d6p117e9cjsn85fc01a7a14b"
         }
     })
     return res.json()
@@ -40,8 +40,8 @@ export const autocompleteAPI = async(search) =>{
     let res = await  fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?q=${search}&region=US`, {
         "method": "GET",
         "headers": {
-            'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
-            'x-rapidapi-key': '3eb96b68f3msheae2452c64a87c9p148086jsn05d3e86df6e3'
+            "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+            "x-rapidapi-key": "e4c6aeeefcmshafcb79a18c182d6p117e9cjsn85fc01a7a14b"
         }
     })
     return res.json()
@@ -52,8 +52,8 @@ export const SummaryStockAPi = async(facebook) =>{
     let res = await  fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-summary?symbol=${facebook}&region=US`, {
         "method": "GET",
         "headers": {
-            'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
-            'x-rapidapi-key': '3eb96b68f3msheae2452c64a87c9p148086jsn05d3e86df6e3'
+            "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+            "x-rapidapi-key": "e4c6aeeefcmshafcb79a18c182d6p117e9cjsn85fc01a7a14b"
         }
     })
     return res.json()
@@ -65,7 +65,7 @@ export const HoldersStockAPI = async(name) =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "3eb96b68f3msheae2452c64a87c9p148086jsn05d3e86df6e3"
+            "x-rapidapi-key": "e4c6aeeefcmshafcb79a18c182d6p117e9cjsn85fc01a7a14b"
         }
     })
     return res.json()
@@ -77,7 +77,7 @@ export const AnalysisStockAPI = async(analysis) =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "3eb96b68f3msheae2452c64a87c9p148086jsn05d3e86df6e3"
+            "x-rapidapi-key": "e4c6aeeefcmshafcb79a18c182d6p117e9cjsn85fc01a7a14b"
         }
     })
     return res.json()
@@ -90,7 +90,7 @@ export const FinancialStockAPI = async(finance) =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "3eb96b68f3msheae2452c64a87c9p148086jsn05d3e86df6e3"
+            "x-rapidapi-key": "e4c6aeeefcmshafcb79a18c182d6p117e9cjsn85fc01a7a14b"
         }
     })
     return res.json()
@@ -102,7 +102,7 @@ export const ProfileStockAPI = async() =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "3eb96b68f3msheae2452c64a87c9p148086jsn05d3e86df6e3"
+            "x-rapidapi-key": "e4c6aeeefcmshafcb79a18c182d6p117e9cjsn85fc01a7a14b"
         }
     })
     return res.json()
