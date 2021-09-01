@@ -10,17 +10,17 @@ const Profile = ({profile}) => {
 
             <div className="row" style={{margin:'30px'}}>
                 <div className="col-md-5 m-3">
-                {profile?profile.assetProfile.address1 : 'N/A'} <br />
-                {profile?profile.assetProfile.city : 'N/A'}, {profile?profile.assetProfile.state : 'N/A'}   {profile?profile.assetProfile.zip : 'N/A'} <br />
-                {profile?profile.assetProfile.country : 'N/A'} <br />
-                <span style={{color:'#0d6efd'}}>{profile?profile.assetProfile.phone : 'N/A'} </span><br />
-               <span style={{color:'#0d6efd'}}>{profile?profile.assetProfile.website : 'N/A'}</span> <br />
+                {profile.assetProfile == null ? 'N/A' : profile.assetProfile.address1} <br />
+                {profile.assetProfile.city == undefined ? 'N/A': profile.assetProfile.city}, {profile.assetProfile.state == undefined ?'N/A' : profile.assetProfile.state}   {profile.assetProfile.zip == undefined ? 'N/A' : profile.assetProfile.zip} <br />
+                {profile.assetProfile.country == undefined? 'N/A' : profile.assetProfile.country} <br />
+                <span style={{color:'#0d6efd'}}>{profile.assetProfile.phone == undefined ?'N/A' : profile.assetProfile.phone } </span><br />
+               <span style={{color:'#0d6efd'}}>{profile.assetProfile.website == undefined ? 'N/A' : profile.assetProfile.website}</span> <br />
 
                 </div>
                 <div className="col-md-5 m-3">
-                Sector(s): <span style={{fontWeight:'bold'}}>{profile?profile.assetProfile.address1 : 'N/A'} </span><br />
-                Industry: <span style={{fontWeight:'bold'}}>{profile?profile.assetProfile.industry : 'N/A'} </span><br />
-                Full Time Employees: <span style={{fontWeight:'bold'}}>{profile?profile.assetProfile.fullTimeEmployees : 'N/A'} </span><br />
+                Sector(s): <span style={{fontWeight:'bold'}}>{profile.assetProfile.address1 == undefined ? 'N/A' : profile.assetProfile.address1} </span><br />
+                Industry: <span style={{fontWeight:'bold'}}>{profile.assetProfile.industry == undefined ? 'N/A' : profile.assetProfile.industry} </span><br />
+                Full Time Employees: <span style={{fontWeight:'bold'}}>{profile.assetProfile.fullTimeEmployees == undefined ? 'N/A' : profile.assetProfile.fullTimeEmployees} </span><br />
                 </div>
             </div>
 

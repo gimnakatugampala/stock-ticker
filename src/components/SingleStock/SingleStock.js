@@ -25,73 +25,77 @@ const SingleStock = ({ConversationnStockAPI,StatisticStockAPI,HistoricStockAPI,P
             console.log(data)
         })
 
-           // Statistics data
-           StatisticStockAPI(symbol)
-           .then(data => {
-               setstatistics(data)
-               console.log(data)
-           })
+          // Conversations Data
+          ConversationnStockAPI(symbol)
+          .then(data => {
+              setconversations(data)
+           //    console.log(data)
+          })
 
-      
-
-        setTimeout(() => {
-
-             // Get Profile Data
+              // Get Profile Data
         ProfileStockAPI(symbol)
         .then(data => {
             setprofile(data)
-            console.log(data)
+            // console.log(data)
         })
 
-           // Conversations Data
-           ConversationnStockAPI(symbol)
+         
+
+
+        
+
+      
+
+
+        setTimeout(() => {
+
+               // Statistics data
+           StatisticStockAPI(symbol)
            .then(data => {
-               setconversations(data)
-               console.log(data)
+               setstatistics(data)
+            //    console.log(data)
            })
 
-           
+             // Get Financial Data
+          FinancialStockAPI(symbol)
+          .then(data => {
+              setfinances(data)
+              console.log(data)
+          })
 
-        },5000)
-
-        setTimeout(() =>{
-
-            HistoricStockAPI(symbol)
-            .then(data => {
-                sethistorics(data)
-                console.log(data)
-            })
-
-              // Get Financial Data
-              FinancialStockAPI(symbol)
-              .then(data => {
-                  setfinances(data)
-                  console.log(data)
-              })
-    
-
-        },10000)
+        },4000)
 
         setTimeout(() => {
 
            
 
-                // Get Analysis Data
-                AnalysisStockAPI(symbol)
-                .then(data => {
-                    setanalysis(data)
-                    console.log(data)
-                })
-
-                     // Get Holders Data
-            HoldersStockAPI(symbol)
+            // Get Analysis Data
+            AnalysisStockAPI(symbol)
             .then(data => {
-                setholders(data)
-                console.log(data)
+                setanalysis(data)
+                // console.log(data)
             })
 
+                 // Get Holders Data
+        HoldersStockAPI(symbol)
+        .then(data => {
+            setholders(data)
+            // console.log(data)
+        })
 
-        },11000)
+        HistoricStockAPI(symbol)
+        .then(data => {
+            sethistorics(data)
+            // console.log(data)
+        })
+
+        
+
+
+    },7000)
+
+       
+       
 
 
 
@@ -101,13 +105,15 @@ const SingleStock = ({ConversationnStockAPI,StatisticStockAPI,HistoricStockAPI,P
     return (
         <div>
             <div className="container-fuild">
-                <h3>Apple Inc. (AAPL)</h3>
-                <p>NasdaqGS - NasdaqGS Real Time Price. Currency in USD</p>
+                <h3>{summary?summary.price.longName : 'N/A'} ({summary?summary.price.symbol: 'N/A'})</h3>
+                <p>{summary?summary.price.exchangeName: 'N/A'} - {summary?summary.price.quoteSourceName: 'N/A'}. Currency in {summary?summary.price.currency: 'N/A'}</p>
                 <span style={{display:'flex',margin:'0'}}>
-                <h1 style={{marginRight:'10px',fontWeight:'bolder'}}>148.60</h1>  <h5 style={{alignSelf:'center'}}>+1.06  (+0.72%)</h5>
+                <h1 style={{marginRight:'10px',fontWeight:'bolder'}}>{summary?summary.price.regularMarketPrice.fmt: 'N/A'}</h1>  <h5 className={summary?Math.sign(summary.price.regularMarketChange.fmt) === -1 ? 'text-danger' : 'text-success' :'N/A'}  style={{alignSelf:'center'}}>{summary?summary.price.regularMarketChange.fmt: 'N/A'} ({summary?summary.price.regularMarketChangePercent.fmt: 'N/A'})</h5>
                 </span>
-                <p style={{marginTop:'-10px',fontSize:'13px',color:'#B8AFAD'}}>At close: August 27 4:00PM EDT</p>
+                <p style={{marginTop:'-10px',fontSize:'13px',color:'#B8AFAD'}}>{summary?new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(summary.price.regularMarketTime): 'N/A'}</p>
             </div>
+           
+
             
             
                <TabsComponent conversations={conversations} statistics={statistics} historics={historics} profile={profile} finances={finances} summary={summary} holders={holders} analysis={analysis} />
