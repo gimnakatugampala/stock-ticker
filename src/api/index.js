@@ -17,7 +17,7 @@ export const TrendingTickerAPI = async() =>{
         "method": "GET",
         "headers": {
             'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
-            // 'x-rapidapi-key': '9bec526ac3msh63dd0dbf60fc193p178bb9jsn3d32f5cc75cf'
+            'x-rapidapi-key': 'c03a2bbfe8mshbfdb306b97d2c74p18eb45jsn22f6cc00e5fe'
         }
     })
     return res.json()

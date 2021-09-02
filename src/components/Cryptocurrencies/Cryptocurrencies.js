@@ -7,7 +7,7 @@ const Cryptocurrencies = ({TrendingTickerAPI,cryptos,setcryptos,isLoading}) => {
     useEffect(() =>{
         TrendingTickerAPI()
         .then(data => setcryptos(data.finance.result[0].quotes.filter(quote => quote.quoteType === 'CRYPTOCURRENCY')))
-    })
+    },[])
 
     return (
         <div>

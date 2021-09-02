@@ -7,7 +7,7 @@ const Stocks = ({TrendingTickerAPI,stocks,setstocks,isLoading}) => {
     useEffect(() => {
         TrendingTickerAPI()
         .then(data => setstocks(data.finance.result[0].quotes.filter(quote => quote.quoteType === 'EQUITY')))
-    })
+    },[])
 
     return (
         <div>

@@ -60,13 +60,13 @@ const App = () => {
                     <div className="col-md-12">
                     <Tabs defaultActiveKey="trending" >
                         <Tab eventKey="trending" title="Trending Stocks">
-                        {/* <TrendingTicker TrendingTickerAPI={TrendingTickerAPI} isLoading={isLoading} /> */}
+                        <TrendingTicker TrendingTickerAPI={TrendingTickerAPI} isLoading={isLoading} />
                         </Tab>
                         <Tab eventKey="stocks" title="Stocks">
-                            {/* <Stocks TrendingTickerAPI={TrendingTickerAPI} stocks={stocks} setstocks={setstocks} isLoading={isLoading} /> */}
+                            <Stocks TrendingTickerAPI={TrendingTickerAPI} stocks={stocks} setstocks={setstocks} isLoading={isLoading} />
                         </Tab>
                         <Tab eventKey="cryptocurries" title="Cryptocurrencies">
-                            {/* <Cryptocurrencies TrendingTickerAPI={TrendingTickerAPI} cryptos={cryptos} setcryptos={setcryptos} isLoading={isLoading} /> */}
+                            <Cryptocurrencies TrendingTickerAPI={TrendingTickerAPI} cryptos={cryptos} setcryptos={setcryptos} isLoading={isLoading} />
                         </Tab>
                     </Tabs>
                     </div>

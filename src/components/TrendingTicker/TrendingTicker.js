@@ -14,7 +14,7 @@ const TrendingTicker = ({TrendingTickerAPI,isLoading}) => {
             settrending(data.finance.result[0].quotes)
             console.log(data)
         })
-    })
+    },[])
 
     return (
         <div>
