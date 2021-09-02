@@ -20,41 +20,39 @@ const SingleStock = ({ChartStockAPI,ConversationnStockAPI,StatisticStockAPI,Hist
 
     useEffect(() => {
 
-        // // Get Summary API
-        // SummaryStockAPi(symbol)
-        // .then(data => {
-        //     setsummary(data)
-        //     console.log(data)
-        // })
+        // Get Summary API
+        SummaryStockAPi(symbol)
+        .then(data => {
+            setsummary(data)
+            console.log(data)
+        })
 
-        //   // Conversations Data
-        //   ConversationnStockAPI(symbol)
-        //   .then(data => {
-        //       setconversations(data)
-        //    //    console.log(data)
-        //   })
-
-        
-        
+          // Conversations Data
+          ConversationnStockAPI(symbol)
+          .then(data => {
+              setconversations(data)
+           //    console.log(data)
+          })
 
       
 
+    
 
-        // setTimeout(() => {
+        setTimeout(() => {
 
-        //        // Statistics data
-        //    StatisticStockAPI(symbol)
-        //    .then(data => {
-        //        setstatistics(data)
-        //     //    console.log(data)
-        //    })
+               // Statistics data
+           StatisticStockAPI(symbol)
+           .then(data => {
+               setstatistics(data)
+            //    console.log(data)
+           })
 
-        //      // Get Financial Data
-        //   FinancialStockAPI(symbol)
-        //   .then(data => {
-        //       setfinances(data)
-        //       console.log(data)
-        //   })
+             // Get Financial Data
+          FinancialStockAPI(symbol)
+          .then(data => {
+              setfinances(data)
+              console.log(data)
+          })
 
         //   Chart Data
           ChartStockAPI(symbol)
@@ -63,55 +61,53 @@ const SingleStock = ({ChartStockAPI,ConversationnStockAPI,StatisticStockAPI,Hist
             console.log(data.chart.result[0])
         })
 
-        // },4000)
+        },4000)
 
-    //     setTimeout(() => {
-
-           
-
-    //         // Get Analysis Data
-    //         AnalysisStockAPI(symbol)
-    //         .then(data => {
-    //             setanalysis(data)
-    //             // console.log(data)
-    //         })
-
-    //              // Get Holders Data
-    //     HoldersStockAPI(symbol)
-    //     .then(data => {
-    //         setholders(data)
-    //         // console.log(data)
-    //     })
-
-    //     HistoricStockAPI(symbol)
-    //     .then(data => {
-    //         sethistorics(data)
-    //         // console.log(data)
-    //     })
-
-        
+        setTimeout(() => {
 
 
-    // },7000)
+                 // Get Holders Data
+        HoldersStockAPI(symbol)
+        .then(data => {
+            setholders(data)
+            // console.log(data)
+        })
+
+        HistoricStockAPI(symbol)
+        .then(data => {
+            sethistorics(data)
+            // console.log(data)
+        })
+
+    },7000)
 
          
   
          
-        //   setTimeout(() =>{
+          setTimeout(() =>{
+             // Get Profile Data
+          ProfileStockAPI(symbol)
+          .then(data => {
+              setprofile(data)
+              // console.log(data)
+          })
 
-        //      // Get Profile Data
-        //   ProfileStockAPI(symbol)
-        //   .then(data => {
-        //       setprofile(data)
-        //       // console.log(data)
-        //   })
+          },10000)
 
-        //   },10000)
 
+            
+          
+          setTimeout(() => {
+            // Get Analysis Data
+            AnalysisStockAPI(symbol)
+            .then(data => {
+                setanalysis(data)
+                // console.log(data)
+            })
+
+
+        },30000)
        
-       
-
-
 
     },[symbol])
 
