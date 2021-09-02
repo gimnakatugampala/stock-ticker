@@ -13,7 +13,7 @@ const Cryptocurrencies = ({TrendingTickerAPI,cryptos,setcryptos,isLoading}) => {
         <div>
             <h1>Cryptocurrencies</h1>
 
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
                 <thead>
                     <tr>
                     <th>Symbol</th>

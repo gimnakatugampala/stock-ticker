@@ -10,7 +10,7 @@ const Summary = ({summary}) => {
         <div style={{display:'flex',marginTop:'20px'}}>
 
 
-           <Table striped bordered hover style={{width:'40%',marginRight:'20px'}}>
+           <Table striped bordered hover style={{width:'40%',marginRight:'20px'}} responsive>
             <tbody>
                 <tr>
                 <td>Previous Close</td>

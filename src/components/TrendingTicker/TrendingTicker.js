@@ -20,7 +20,7 @@ const TrendingTicker = ({TrendingTickerAPI,isLoading}) => {
         <div>
             <h1>Trending Ticker</h1>
 
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
                 <thead>
                     <tr>
                     <th>Symbol</th>

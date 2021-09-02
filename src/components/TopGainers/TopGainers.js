@@ -12,7 +12,7 @@ export const TopGainers = ({TopGainersAPI,isLoading,setgainers,gainers}) => {
     return (
         <div>
             <h1>Top Gainers</h1>
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
                 <thead>
                     <tr>
                     <th>Symbol</th>

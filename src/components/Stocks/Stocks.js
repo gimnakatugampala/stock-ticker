@@ -13,7 +13,7 @@ const Stocks = ({TrendingTickerAPI,stocks,setstocks,isLoading}) => {
         <div>
             <h1>Stocks</h1>
 
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
                 <thead>
                     <tr>
                     <th>Symbol</th>
