@@ -1,13 +1,13 @@
 
  // Latest News
  export const getlatestNews = async() =>{
-    let res = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=308faf4efa404c539cac219d9e6e0ac8');
+    let res = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=655539e018044f9382f8120b165d1e3c');
     return res.json(); 
   }
 
 //   Query News
 export const getQueryNews = async(search) =>{
-    let res = await fetch(`https://newsapi.org/v2/everything?q=${search}e&sortBy=popularity&apiKey=308faf4efa404c539cac219d9e6e0ac8`);
+    let res = await fetch(`https://newsapi.org/v2/everything?q=${search}e&sortBy=popularity&apiKey=655539e018044f9382f8120b165d1e3c`);
     return res.json(); 
 }
 
@@ -17,7 +17,7 @@ export const TrendingTickerAPI = async() =>{
         "method": "GET",
         "headers": {
             'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
-            'x-rapidapi-key': 'b512652f5bmsh4e895f4e7810126p183d52jsned893fce8014'
+            'x-rapidapi-key': '2af9a37521msh73b42cf0567a240p12d907jsne154ae89b3f5'
         }
     })
     return res.json()
@@ -29,7 +29,7 @@ export const MoversAPI = async() =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "b512652f5bmsh4e895f4e7810126p183d52jsned893fce8014"
+            "x-rapidapi-key": "2af9a37521msh73b42cf0567a240p12d907jsne154ae89b3f5"
         }
     })
     return res.json()
@@ -41,7 +41,7 @@ export const autocompleteAPI = async(search) =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "b512652f5bmsh4e895f4e7810126p183d52jsned893fce8014"
+            "x-rapidapi-key": "2af9a37521msh73b42cf0567a240p12d907jsne154ae89b3f5"
         }
     })
     return res.json()
@@ -53,7 +53,7 @@ export const SummaryStockAPi = async(facebook) =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "b512652f5bmsh4e895f4e7810126p183d52jsned893fce8014"
+            "x-rapidapi-key": "2af9a37521msh73b42cf0567a240p12d907jsne154ae89b3f5"
         }
     })
     return res.json()
@@ -65,7 +65,7 @@ export const HoldersStockAPI = async(name) =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "b512652f5bmsh4e895f4e7810126p183d52jsned893fce8014"
+            "x-rapidapi-key": "2af9a37521msh73b42cf0567a240p12d907jsne154ae89b3f5"
         }
     })
     return res.json()
@@ -77,7 +77,7 @@ export const AnalysisStockAPI = async(analysis) =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "b512652f5bmsh4e895f4e7810126p183d52jsned893fce8014"
+            "x-rapidapi-key": "2af9a37521msh73b42cf0567a240p12d907jsne154ae89b3f5"
         }
     })
     return res.json()
@@ -90,7 +90,7 @@ export const FinancialStockAPI = async(finance) =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "b512652f5bmsh4e895f4e7810126p183d52jsned893fce8014"
+            "x-rapidapi-key": "2af9a37521msh73b42cf0567a240p12d907jsne154ae89b3f5"
         }
     })
     return res.json()
@@ -102,7 +102,7 @@ export const ProfileStockAPI = async(profile) =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "b512652f5bmsh4e895f4e7810126p183d52jsned893fce8014"
+            "x-rapidapi-key": "2af9a37521msh73b42cf0567a240p12d907jsne154ae89b3f5"
         }
     })
     return res.json()
@@ -115,7 +115,7 @@ export const HistoricStockAPI = async(history) =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "b512652f5bmsh4e895f4e7810126p183d52jsned893fce8014"
+            "x-rapidapi-key": "2af9a37521msh73b42cf0567a240p12d907jsne154ae89b3f5"
         }
     })
     return res.json()
@@ -128,7 +128,7 @@ export const StatisticStockAPI = async(statistic) =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "b512652f5bmsh4e895f4e7810126p183d52jsned893fce8014"
+            "x-rapidapi-key": "2af9a37521msh73b42cf0567a240p12d907jsne154ae89b3f5"
         }
     })
     return res.json()
@@ -140,7 +140,7 @@ export const ConversationnStockAPI = async(convers) =>{
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-            "x-rapidapi-key": "b512652f5bmsh4e895f4e7810126p183d52jsned893fce8014"
+            "x-rapidapi-key": "2af9a37521msh73b42cf0567a240p12d907jsne154ae89b3f5"
         }
     })
     return res.json()

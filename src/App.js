@@ -27,24 +27,22 @@ const App = () => {
     const [symbol, setsymbol] = useState('')
 
 
-    
-    if(search){
-        autocompleteAPI(search)
-        .then(data => setsymbol(data.quotes[0].symbol))
-    }
-
-
-    console.log(symbol)
-
-
-    const searchTerm = (e) =>{
+    const handleSubmit = (e) =>{
         e.preventDefault()
         setSearch(search)
+        console.log(search)
+
+                autocompleteAPI(search)
+                .then(data => setsymbol(data.quotes[0].symbol))
+            
+    
+        console.log(symbol)
+
     }
 
     return (
         <div>
-            <Navbar setSearch={setSearch} search={search} searchTerm={searchTerm} />
+            <Navbar setSearch={setSearch} search={search} handleSubmit={handleSubmit} />
 
             {/* Recommended List of Stock */}
             <StockRecommend MoversAPI={MoversAPI} isLoading={isLoading} movers={movers} setmovers={setmovers}  />
@@ -77,7 +75,7 @@ const App = () => {
            
 
             {/* News */}
-            <News searchTerm={searchTerm} getQueryNews={getQueryNews} getlatestNews={getlatestNews} news={news} setNews={setNews} isLoading={isLoading} setisLoading={setisLoading} search={search} />
+            <News handleSubmit={handleSubmit} getQueryNews={getQueryNews} getlatestNews={getlatestNews} news={news} setNews={setNews} isLoading={isLoading} setisLoading={setisLoading} search={search} />
 
             </div>
         </div>
