@@ -47,7 +47,7 @@ const App = () => {
             <Navbar setSearch={setSearch} search={search} searchTerm={searchTerm} />
 
             {/* Recommended List of Stock */}
-            {/* <StockRecommend MoversAPI={MoversAPI} isLoading={isLoading} movers={movers} setmovers={setmovers}  /> */}
+            <StockRecommend MoversAPI={MoversAPI} isLoading={isLoading} movers={movers} setmovers={setmovers}  />
 
             <div style={{margin:20}}>
 
